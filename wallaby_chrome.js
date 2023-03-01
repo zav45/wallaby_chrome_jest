@@ -1,4 +1,4 @@
-export default function () {
+export default function (wallaby) {
   return {
 
     files: [
@@ -15,6 +15,11 @@ export default function () {
     },
 
     runAllTestsInAffectedTestFile: true,
+
+    setup(wallaby) {
+      wallaby.testFramework.getEnv().configure({ random: false });
+    }
+
     // runMode: 'onsave',
     // trace: true,
 
